@@ -4,9 +4,8 @@
   "description": "\"Message app for Web's foundamental's exam\"",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "start-development-mode": "nodemon backend/server.js"
-
+    "start": "node server.js",
+    "start-development-mode": "nodemon server.js"
   },
   "keywords": [],
   "author": "Alessandro Troiano, Raffaele Neri, Rossella Tritto",
@@ -18,7 +17,9 @@
   "dependencies": {
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "mongoose": "^7.2.2",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
   }
 }
