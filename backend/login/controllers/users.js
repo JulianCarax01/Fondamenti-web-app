@@ -6,7 +6,7 @@ module.exports = {
             const user = await User.findOne({ username: req.body._id, password: req.body.password });
 
             if (!user) {
-                return res.status(404).send('Utente non trovato');
+                return res.redirect('/?error=credenzialierrate');
             }
 
             req.session.userId = user._id;
