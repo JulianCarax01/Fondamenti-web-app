@@ -1,5 +1,5 @@
 const User = require('../models/users');
-
+//Esportiamo la funzione asincrona LoginUser
 module.exports = {
     loginUser: async (req, res) => {
         try {
