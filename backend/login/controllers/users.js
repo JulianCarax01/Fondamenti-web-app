@@ -1,10 +1,9 @@
 const User = require('../models/users');
-
-// Esportiamo la funzione asincrona loginUser
+//Esportiamo la funzione asincrona LoginUser
 module.exports = {
     loginUser: async (req, res) => {
         try {
-            const user = await User.findOne({ username: req.body.username, password: req.body.password });
+            const user = await User.findOne({ username: req.body._id, password: req.body.password });
 
             if (!user) {
                 return res.redirect('/?error=credenzialierrate');

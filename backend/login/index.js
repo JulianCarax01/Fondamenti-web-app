@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const session = require('express-session');
 
-app.use(express.static('static'));
+app.use(express.static('/static'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
