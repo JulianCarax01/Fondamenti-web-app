@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node backend/manda-messaggio/server.js",
     "start-development-mode": "nodemon backend/manda-messaggio/server.js"
-
   },
   "keywords": [],
   "author": "Alessandro Troiano, Raffaele Neri, Rossella Tritto",
@@ -18,7 +17,9 @@
   "dependencies": {
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "mongoose": "^7.2.2",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
   }
 }

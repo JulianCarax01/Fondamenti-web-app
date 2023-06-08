@@ -33,8 +33,7 @@ const router = require('./routes/api');
 
 //Creiamo il collegamento a index quando utilizziamo localhost:3000/
 app.get('/', function (req, res) {
-    const errorMessage = req.query.error === 'credenzialierrate' ? 'Credenziali errate' : '';
-    res.sendFile(path.join(__dirname, 'login.html'), { error: errorMessage });
+    res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 app.use('/api', router);
