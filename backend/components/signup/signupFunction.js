@@ -5,7 +5,7 @@ const User = require("../../models/users");
     const {firstName, lastName, _id, password, gender, birthday } = req.body;
 
     try {
-      const newUser = new User({firstName, lastName, _id, password, gender, birthday });
+      const newUser = new User({firstName, lastName, password, gender, birthday });
       await newUser.save();
 
       res.json({ message: 'Utente aggiunto!' });
