@@ -4,8 +4,8 @@
   "description": "\"Message app for Web's foundamental's exam\"",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "start-development-mode": "nodemon backend/server.js"
+    "start": "node backend/manda-messaggio/server.js",
+    "start-development-mode": "nodemon backend/manda-messaggio/server.js"
 
   },
   "keywords": [],
