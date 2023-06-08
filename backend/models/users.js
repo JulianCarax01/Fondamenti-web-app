@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const chatList=require("./chatList")
+
 //Creiamo lo schema di mongoose
 const userSchema = new mongoose.Schema({
     firstName: {
@@ -22,7 +24,9 @@ const userSchema = new mongoose.Schema({
         type: Date,
         required: true,
         unique: false
-    }
+    },
+    friends:[],
+    chatLists:[]
 
 });
 
