@@ -29,6 +29,9 @@ db.once("open", () => {
   });
 });
 
+
+
+
 //Colleghiamoci al router
 const router = require('./routes/api');
 const usersRouter = require('./routes/users');
