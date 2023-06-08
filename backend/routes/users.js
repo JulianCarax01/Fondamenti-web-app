@@ -9,4 +9,11 @@ router.get('/', (req, res) => {
 //All'inserimento dei file nel form , andiamo a /login dovè chiameremo loginUser
 router.post('/login', usersController.loginUser);
 
+router.post('/signup', usersController.addUser);
+
 module.exports = router;
+
+
+
+
+

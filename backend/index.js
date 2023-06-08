@@ -19,7 +19,7 @@ app.use(
 );
 
 //Connettiamoci al db
-mongoose.connect("mongodb+srv://BlackRaffo70:Alessandro2001@cluster0.zt6ollt.mongodb.net/?retryWrites=true&w=majority/Cluster0");
+mongoose.connect("mongodb+srv://BlackRaffo70:Alessandro2001@cluster0.zt6ollt.mongodb.net/?retryWrites=true&w=majority");
 //
 const db = mongoose.connection;
 db.once("open", () => {
@@ -31,6 +31,7 @@ db.once("open", () => {
 
 //Colleghiamoci al router
 const router = require('./routes/api');
+const usersRouter = require('./routes/users');
 
 //Creiamo il collegamento a index quando utilizziamo localhost:3000/
 app.get('/', function (req, res) {
@@ -38,3 +39,11 @@ app.get('/', function (req, res) {
 });
 
 app.use('/api', router);
+
+
+app.get('/signup', function (req, res) {
+  res.sendFile(path.join(__dirname, 'signup.html'));
+});
+
+app.use('/users', usersRouter);
+
