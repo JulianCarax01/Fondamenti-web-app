@@ -2,7 +2,7 @@ const User = require("../../models/users");
 
 
   addUser = async (req, res) => {
-    const {firstName, lastName, _id, password, gender, birthday } = req.body;
+    const {firstName, lastName, password, gender, birthday } = req.body;
 
     try {
       const newUser = new User({firstName, lastName, password, gender, birthday });
