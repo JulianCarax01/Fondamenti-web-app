@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
 const session = require('express-session');
+const port=3000
 
 app.use(express.static('/static'));
 app.use(express.urlencoded({ extended: true }));
@@ -23,7 +24,7 @@ mongoose.connect("mongodb+srv://BlackRaffo70:Alessandro2001@cluster0.zt6ollt.mon
 const db = mongoose.connection;
 db.once("open", () => {
   console.log("Connesso al DB");
-  app.listen(3000, () => {
+  app.listen(port, () => {
     console.log("App in ascolto");
   });
 });
