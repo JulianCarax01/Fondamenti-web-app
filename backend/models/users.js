@@ -11,18 +11,20 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    username: {
+        type: String,
+        required: true,
+        unique:true
+    },
     password: {
         type: String,
         required: true,
-        unique: true
     },
     gender: {
         type: String,
-        required: true
     },
     birthday: {
         type: Date,
-        required: true,
         unique: false
     },
     friends:[],
