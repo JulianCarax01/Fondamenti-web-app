@@ -27,8 +27,8 @@ const userSchema = new mongoose.Schema({
         type: Date,
         unique: false
     },
-    friends:[],
-    chatLists:[]
+    //friends:[mongoose.Schema.ObjectId],
+    chatLists:chatList.schema
 
 });
 

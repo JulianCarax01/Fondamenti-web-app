@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style_signup.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SendMessage</title>
+
+</head>
+<body>
+<h1> Send your message! </h1>
+<form action="/api/users/sendMessage" method="post">
+    <label for="sendMessage"> * Type your message here...</label>
+    <input type="text" id="sendMessage" name="sendMessage" required><br>
+    <label for="receiver">Who you want to send the message?</label>
+    <input type="text" id="receiver" name="receiver">
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>

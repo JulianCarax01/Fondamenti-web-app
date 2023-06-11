@@ -20,7 +20,6 @@ const User = require("../../models/users");
       res.status(500).json({ message: 'Errore del server' });
     }
    };
-  
 
 
 module.exports=addUser
