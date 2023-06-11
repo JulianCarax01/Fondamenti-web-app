@@ -4,15 +4,15 @@ const User = require("./users");
 
 
 const chatSchema = new mongoose.Schema({
-    first_id:{
-        type:String,
-        unique:true
+    codice1: {
+        type: String, unique: true
+    }, codice2: {
+        type: String, unique: true
     },
-    second_id:{
-        type:String,
-        unique:true
-    },
-    messages: [Message.schema]
+    messages: {
+        type:[Message.schema],
+        default: []
+    }
 });
 
 module.exports = mongoose.model("Chat", chatSchema)
