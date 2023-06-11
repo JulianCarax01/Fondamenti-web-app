@@ -22,6 +22,7 @@ app.use(
 mongoose.connect("mongodb+srv://BlackRaffo70:Alessandro2001@cluster0.zt6ollt.mongodb.net/?retryWrites=true&w=majority");
 //
 const db = mongoose.connection;
+
 db.once("open", () => {
     console.log("Connesso al DB");
     app.listen(port, () => {
@@ -41,11 +42,5 @@ app.get('/', function (req, res) {
 app.use('/api', router);
 
 
-app.get('/signup', function (req, res) {
-    res.sendFile(path.join(__dirname, 'signup.html'));
-});
 
 
-app.get('/sendMessage', function (req, res) {
-    res.sendFile(path.join(__dirname, 'sendMessage.html'));
-});

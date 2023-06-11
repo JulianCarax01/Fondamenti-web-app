@@ -4,11 +4,11 @@ const User = require("./users");
 
 
 const chatSchema = new mongoose.Schema({
-    mine_id:{
+    first_id:{
         type:String,
         unique:true
     },
-    other_id:{
+    second_id:{
         type:String,
         unique:true
     },

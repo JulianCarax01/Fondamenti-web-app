@@ -1,7 +1,10 @@
 const User = require("../../models/users");
+const path = require('path');
+
+
 loginUser=async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.body._id, password: req.body.password });
+        const user = await User.findOne({ username: req.body.username, password: req.body.password });
 
         if (!user) {
             return res.redirect('/?error=credenzialierrate');
@@ -9,7 +12,9 @@ loginUser=async (req, res) => {
 
         req.session.userId = user._id;
         req.session.password = user.password;
-        res.send('Accesso riuscito');
+        user.logged=true
+        user.save()
+        res.sendFile(path.join(__dirname, "../../sendMessage.html"));
     } catch (err) {
         console.error(err);
         res.status(500).send('Errore del server');

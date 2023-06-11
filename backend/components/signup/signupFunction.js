@@ -10,8 +10,8 @@ const User = require("../../models/users");
       if (existingUser) {
         return res.status(400).json({ message: 'Lo username è già stato utilizzato. Si prega di sceglierne un altro.' });
       }
-    
-      const newUser = new User({ firstName, lastName, username, password, gender, birthday });
+      const chatListId=String(Math.floor(Math.random()*100+1))
+      const newUser = new User({ firstName, lastName, username, password, gender, birthday,chatListId });
       await newUser.save();
     
       res.json({ message: 'Utente aggiunto!' });

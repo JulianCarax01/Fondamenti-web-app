@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const chatList=require("./chatList")
 
 //Creiamo lo schema di mongoose
 const userSchema = new mongoose.Schema({
@@ -27,8 +26,15 @@ const userSchema = new mongoose.Schema({
         type: Date,
         unique: false
     },
+    logged:{
+        type:Boolean,
+        default:false
+    },
+    chatList_id: {
+        type:String,
+        unique:true
+    }
     //friends:[mongoose.Schema.ObjectId],
-    chatLists:chatList.schema
 
 });
 
