@@ -1,7 +1,7 @@
 import './App.css';
 import Login from './pages/Login';
 import Homepage from './pages/Homepage';
-import SignUp from './pages/Signup';
+import SignUp from './pages/SignUp';
 import Menu from './components/Menu';
 import {Routes, Route} from 'react-router-dom';
 
