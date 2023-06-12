@@ -7,13 +7,13 @@ loginUser=async (req, res) => {
         const user = await User.findOne({ username: req.body.username, password: req.body.password });
 
         if (!user) {
-            return res.redirect('/?error=credenzialierrate');
+            return res.status(401).json({ error: 'Le credenziali sono errate. Riprova.' });
         }
 
         req.session.userId = user._id;
         req.session.password = user.password;
         user.logged=true
-        user.save()
+        await user.save()
         res.sendFile(path.join(__dirname, "../../sendMessage.html"));
     } catch (err) {
         console.error(err);

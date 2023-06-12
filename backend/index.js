@@ -4,8 +4,11 @@ const app = express();
 const path = require('path');
 const session = require('express-session');
 const port = 3000
+const cors = require('cors');
 
-app.use(express.static('/static'));
+app.use(cors());
+
+app.use(express.static(path.join(__dirname, '../frontend/public')));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -36,7 +39,7 @@ const router = require('./routes/api');
 
 //Creiamo il collegamento a index quando utilizziamo localhost:3000/
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'login.html'));
+    res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
 });
 
 app.use('/api', router);

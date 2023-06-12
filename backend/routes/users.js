@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
 //All'inserimento dei file nel form , andiamo a /login dove chiameremo loginUser
 router.post('/login', usersController.loginUser);
 
-router.get('/signup', function (req, res) {
-  res.sendFile(path.join(__dirname, '../signup.html'));
-});
 
+router.get('/signup', function (req, res) {
+  res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
+});
 
 router.post('/signup', usersController.addUser);
 
