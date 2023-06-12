@@ -8,8 +8,8 @@ export default function LogIn(){
   const [password, setPassword] = useState('');
 
     function togglePasswordVisibility() {
-        var passwordInput = document.getElementById("password");
-        var toggleBtn = document.querySelector(".toggle-btn");
+        let passwordInput = document.getElementById("password");
+        let toggleBtn = document.querySelector(".toggle-btn");
     
         if (passwordInput.type === "password") {
           passwordInput.type = "text";
