@@ -22,11 +22,10 @@ export default function LogIn(){
 
       const handleSubmit = (e) => {
         e.preventDefault();
-    
+        console.log(`${username}`)
         axios.post('http://localhost:3000/api/users/login', {username, password})
           .then((response) => {
-            console.log(response.data);
-            navigate('/homepage'); 
+            navigate('/homepage');
           })
           .catch((error) => {
             if (error.response && error.response.status === 401) {
