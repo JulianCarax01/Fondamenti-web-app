@@ -16,7 +16,6 @@ const sendMessageFunction = async (req, res) => {
         const tryChat2 = await Chat.exists({utente1: user._id, utente2: sender})
 
 
-
         if (tryChat1) {
             const ChatRoom = await Chat.findOne({utente1: sender, utente2: user._id})
             ChatRoom.messages.push(newMessage)
@@ -31,7 +30,8 @@ const sendMessageFunction = async (req, res) => {
             ChatRoom.save()
         }
 
-        res.status(200).end()
+
+        res.status(200).send("ok").end()
 
     } catch (e) {
         console.log(e)
