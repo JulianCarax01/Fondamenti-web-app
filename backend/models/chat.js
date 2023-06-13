@@ -4,14 +4,16 @@ const User = require("./users");
 
 
 const chatSchema = new mongoose.Schema({
-    codice1: {
-        type: String, unique: true
-    }, codice2: {
-        type: String, unique: true
+    utente1: {
+        type: String,
+        unique:false
+    }, utente2: {
+        type: String,
+        unique: false
     },
     messages: {
         type:[Message.schema],
-        default: []
+        unique:false
     }
 });
 
