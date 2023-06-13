@@ -2,7 +2,7 @@ const monggoose = require("mongoose")
 
 const messageSchema = new monggoose.Schema({
     text: {
-        type: String, reqired: true
+        type: String, reqired: true, unique:false
     }
 }, {
     timestamps: true

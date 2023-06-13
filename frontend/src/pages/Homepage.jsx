@@ -13,7 +13,7 @@ export default function Homepage(){
         <div className="justify-content-center">
         <Card icon={FaList} name="Visualizza le mie chat" link="/"/>
         <Card icon={FaUsers} name="Visualizza i miei amici" link="/"/>  
-        <Card icon={FaRegEdit} name="Scrivi un messaggio" link="/"/>
+        <Card icon={FaRegEdit} name="Scrivi un messaggio" link="/sendMessage"/>
         <Card icon={FaUserPlus} name="Aggiungi un amico" link="/"/>
         <Card icon={FaUserMinus} name="Elimina un amico" link="/"/>
         

@@ -30,10 +30,7 @@ const userSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    chatList_id: {
-        type:String,
-        unique:true
-    }
+
     //friends:[mongoose.Schema.ObjectId],
 
 });
