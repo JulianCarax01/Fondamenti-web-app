@@ -58,7 +58,7 @@ export default function LogIn(){
 
 
 <p> Don't have an account yet? </p>
-<a href='http://localhost:3001/signup'> <button>Sign Up! </button></a>
+<a href='http://localhost:3000/signup'> <button>Sign Up! </button></a>
 
 </>
     )
