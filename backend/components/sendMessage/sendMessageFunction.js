@@ -28,7 +28,13 @@ const sendMessageFunction = async (req, res) => {
             const ChatRoom = await Chat.create({utente1: sender, utente2: user._id})
             ChatRoom.messages.push(newMessage)
             ChatRoom.save()
+            user.chats.push(ChatRoom._id)
+            user.save()
+            const Sender= await User.findOne({_id:sender})
+            Sender.chats.push(ChatRoom._id)
+            Sender.save()
         }
+
 
 
         res.status(200).send("ok").end()
