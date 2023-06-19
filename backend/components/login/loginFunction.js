@@ -1,5 +1,5 @@
 const User = require("../../models/users");
-const path = require('path');
+
 
 
 loginUser = async (req, res) => {
