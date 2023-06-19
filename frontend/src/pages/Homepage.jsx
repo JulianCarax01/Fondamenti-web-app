@@ -4,11 +4,11 @@ import {FaList, FaRegEdit, FaUsers, FaUserPlus, FaUserMinus } from 'react-icons/
 
 
 export default function Homepage(){
-
+    const username = localStorage.getItem('username');
 
     return (
         <>
-        <h2> Questa è la tua homepage </h2> 
+        <h2> Benvenuto {username} </h2>
         <p> Scegli cosa vuoi fare </p>
         <div className="justify-content-center">
         <Card icon={FaList} name="Visualizza le mie chat" link="/"/>
