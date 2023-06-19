@@ -22,7 +22,7 @@ export default function Homepage() {
     return (
         <>
             <h2>
-                Benvenut{gender === "male" ? "o" : "a"} {username}
+                Benvenut{gender === "male" ? "o" : (gender === "female" ? "a" : "*")} {username}
             </h2>
             <p>Scegli cosa vuoi fare</p>
             <div className="justify-content-center">
