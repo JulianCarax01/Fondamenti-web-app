@@ -22,12 +22,11 @@ export default function LogIn() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(`${username}`);
         // Salva l'username nel localStorage
         localStorage.setItem('username', username);
 
         axios.post('http://localhost:3000/api/users/login', { username, password })
-            .then((response) => {
+            .then(() => {
                 navigate('/homepage');
             })
             .catch((error) => {
