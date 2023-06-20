@@ -13,11 +13,14 @@ loginUser = async (req, res) => {
         req.session.userId = user._id;
         req.session.password = user.password;
         user.logged = true
-        await user.save()
-        res.status(200).send("tutt'appost");
+        //await user.save()
+
+        res.status(200).json({
+            user: user
+        });
     } catch (err) {
         console.error(err);
-        res.status(500).send('Errore del server');
+        res.status(500).send({error: 'Errore server'});
     }
 }
 
