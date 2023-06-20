@@ -37,11 +37,6 @@ db.once("open", () => {
 //Colleghiamoci al router
 const router = require('./routes/api');
 
-//Creiamo il collegamento a index quando utilizziamo localhost:3000/
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
-});
-
 app.use('/api', router);
 
 

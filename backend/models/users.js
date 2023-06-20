@@ -1,39 +1,25 @@
-const mongoose = require('mongoose')
+const {mongoose, Schema} = require('mongoose')
+const Chat = require('./chat')
 
 //Creiamo lo schema di mongoose
 const userSchema = new mongoose.Schema({
     firstName: {
+        type: String, required: true
+    }, lastName: {
+        type: String, required: true
+    }, username: {
+        type: String, required: true, unique: true
+    }, password: {
+        type: String, required: true,
+    }, gender: {
         type: String,
-        required: true
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
-    username: {
-        type: String,
-        required: true,
-        unique:true
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    gender: {
-        type: String,
-    },
-    birthday: {
-        type: Date,
-        unique: false
-    },
-    logged:{
-        type:Boolean,
-        default:false
-    },
-    chats: {
-        type:[String],
-        unique:false
-    }
+    }, birthday: {
+        type: Date, unique: false
+    }, logged: {
+        type: Boolean, default: false
+    }, chats: [{type: Schema.Types.ObjectId, ref: "Chat"}]
+
+
 
     //friends:[mongoose.Schema.ObjectId],
 

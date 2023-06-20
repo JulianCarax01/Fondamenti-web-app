@@ -1,11 +1,11 @@
-const monggoose = require("mongoose")
+const {mongoose, Schema} = require("mongoose")
+const Users = require("./users")
 
-const messageSchema = new monggoose.Schema({
-    text: {
-        type: String, reqired: true, unique:false
-    }
-}, {
-    timestamps: true
-});
+const messageSchema = new mongoose.Schema({
 
-module.exports = monggoose.model("Message", messageSchema)
+    text: {type: String, reqired: true, unique: false},
+    sender: [{type: Schema.Types.ObjectId, ref: "Users"}],
+    receiver: [{type: Schema.Types.ObjectId, ref: "Users"}]
+}, {timestamp: true});
+
+module.exports = mongoose.model("Message", messageSchema)
