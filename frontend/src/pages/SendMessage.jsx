@@ -52,7 +52,7 @@ export default function SendMessage() {
             </div>
 
             <div>
-                <button type="submit" id="sendMessage">Ivia</button>
+                <button type="submit" id="sendMessage">Invia</button>
             </div>
 
 
