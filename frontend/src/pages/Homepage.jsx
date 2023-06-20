@@ -4,8 +4,9 @@ import { FaList, FaRegEdit, FaUsers, FaUserPlus, FaUserMinus } from 'react-icons
 
 
 export default function Homepage() {
-    const username = localStorage.getItem('username');
-    const gender = localStorage.getItem('gender');
+    const user = JSON.parse(localStorage.getItem('user'));
+    const username = user.username;
+    const gender = user.gender;
 
 
     return (

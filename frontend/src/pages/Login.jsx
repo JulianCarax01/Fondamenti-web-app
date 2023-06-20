@@ -23,11 +23,19 @@ export default function LogIn() {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Salva l'username nel localStorage
-        localStorage.setItem('username', username);
+        //localStorage.setItem('username', username);
 
         axios.post('http://localhost:3000/api/users/login', {username, password})
-            .then(() => {
-                navigate('/homepage');
+            .then((response) => {
+                const data = response.data;
+                console.log(data)
+                const user = data.user ?? null;
+                if(user !== null){
+                    localStorage.setItem("user", JSON.stringify(user));
+                    navigate('/homepage');
+                }else{
+                    alert("Utente non valido o password errata");
+                }
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
