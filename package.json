@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.2",
+    "socket.io-client": "^4.6.2"
+  },
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianCarax01/Fondamenti-web-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulianCarax01/Fondamenti-web-app/issues"
+  },
+  "homepage": "https://github.com/JulianCarax01/Fondamenti-web-app#readme",
+  "description": ""
+}

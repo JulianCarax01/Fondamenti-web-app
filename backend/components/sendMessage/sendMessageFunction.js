@@ -11,7 +11,7 @@ const sendMessageFunction = async (req, res) => {
             return res.redirect(`/?error=utenteNonTrovato`)
         }
 
-        const newMessage = await new Message({text: sendMessage})
+        const newMessage = await new Message({text: sendMessage, sender: sender, receiver: user._id})
         const tryChat1 = await Chat.exists({utente1: sender, utente2: user._id})
         const tryChat2 = await Chat.exists({utente1: user._id, utente2: sender})
 
@@ -30,11 +30,10 @@ const sendMessageFunction = async (req, res) => {
             ChatRoom.save()
             user.chats.push(ChatRoom._id)
             user.save()
-            const Sender= await User.findOne({_id:sender})
+            const Sender = await User.findOne({_id: sender})
             Sender.chats.push(ChatRoom._id)
             Sender.save()
         }
-
 
 
         res.status(200).send("ok").end()
