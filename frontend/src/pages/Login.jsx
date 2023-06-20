@@ -25,34 +25,13 @@ export default function LogIn() {
         // Salva l'username nel localStorage
         localStorage.setItem('username', username);
 
-        axios.post('http://localhost:3000/api/users/login', { username, password })
+        axios.post('http://localhost:3000/api/users/login', {username, password})
             .then(() => {
                 navigate('/homepage');
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
-                    const { error: errorMessage } = error.response.data;
-                    alert(errorMessage);
-                } else {
-                    console.error(error);
-                    alert('Errore del server');
-                }
-            });
-
-        axios.get('http://localhost:3000/api/users/login', {
-            params: {
-                username,
-                password
-            }
-        })
-            .then((response) => {
-                const { gender } = response.data;
-                // Usa il valore del gender ottenuto dalla risposta
-                localStorage.setItem('gender',gender)
-            })
-            .catch((error) => {
-                if (error.response && error.response.status === 401) {
-                    const { error: errorMessage } = error.response.data;
+                    const {error: errorMessage} = error.response.data;
                     alert(errorMessage);
                 } else {
                     console.error(error);
