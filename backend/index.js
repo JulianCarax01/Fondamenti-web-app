@@ -9,7 +9,7 @@ const socketIo = require("socket.io");
 
 const app = express();
 const server = http.createServer(app)
-const io = socketIo(server, {cors: {origin: "*"}})
+const io = socketIo(server, {cors: {origin: "*", method: "*"}})
 
 
 app.use(cors());
@@ -49,5 +49,8 @@ io.on("connection", (socket) => {
     console.log("utente connesso")
     socket.on("disconnect", () => {
         console.log("disconnected")
+    })
+    socket.on("new-message", (obj) => {
+        console.log(`${obj}`)
     })
 })

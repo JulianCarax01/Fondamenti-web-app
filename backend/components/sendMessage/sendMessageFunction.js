@@ -4,14 +4,14 @@ const User = require("../../models/users")
 
 const sendMessageFunction = async (req, res) => {
     try {
-        const {sendMessage, receiver, sender} = req.body
+        const {text, receiver, sender} = req.body
         const user = await User.findOne({username: receiver})
 
         if (!user) {
-            return res.redirect(`/?error=utenteNonTrovato`)
+            return res.status(401).json({error: 'Utente non trovato'});
         }
 
-        const newMessage = await new Message({text: sendMessage, sender: sender, receiver: user._id})
+        const newMessage = await new Message({text: text, sender: sender, receiver: user._id})
         const tryChat1 = await Chat.exists({utente1: sender, utente2: user._id})
         const tryChat2 = await Chat.exists({utente1: user._id, utente2: sender})
 

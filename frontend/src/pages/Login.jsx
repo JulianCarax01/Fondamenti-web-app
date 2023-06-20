@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function LogIn() {
     const navigate = useNavigate();
@@ -30,10 +30,10 @@ export default function LogIn() {
                 const data = response.data;
                 console.log(data)
                 const user = data.user ?? null;
-                if(user !== null){
+                if (user !== null) {
                     localStorage.setItem("user", JSON.stringify(user));
                     navigate('/homepage');
-                }else{
+                } else {
                     alert("Utente non valido o password errata");
                 }
             })
@@ -49,24 +49,26 @@ export default function LogIn() {
 
     }
 
-    return (
-        <>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username" id="usernameForm">Username:</label>
-                    <input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </div>
-                <div className="password-toggle">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <span className="toggle-btn" onClick={togglePasswordVisibility}>&#x1f441;</span>
-                </div>
-                <button type="submit" id="btnSend">Accedi</button>
-            </form>
+    return (<>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="username" id="usernameForm">Username:</label>
+                <input type="text" id="username" name="username" value={username}
+                       onChange={(e) => setUsername(e.target.value)}/>
+            </div>
+            <div className="password-toggle">
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" value={password}
+                       onChange={(e) => setPassword(e.target.value)}/>
+                <span className="toggle-btn" onClick={togglePasswordVisibility}>&#x1f441;</span>
+            </div>
+            <button type="submit" id="btnSend">Accedi</button>
+        </form>
 
-            <p> Don't have an account yet? </p>
-            <a href='http://localhost:3001/signup'> <button>Sign Up! </button></a>
-        </>
-    )
+        <p> Don't have an account yet? </p>
+        <a href='http://localhost:3001/signup'>
+            <button>Sign Up!</button>
+        </a>
+    </>)
 }

@@ -1,12 +1,23 @@
 import React, {useState} from "react";
 import axios from 'axios';
+import {socket} from "../socket";
 
 
-export default function sendMessage() {
+export default function SendMessage() {
+
+    const [text, setText] = useState('')
+    const [receiver, setReceiver] = useState('')
+
+    const user = JSON.parse(localStorage.getItem('user'));
+    const sender = user._id;
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:3000/api/users/sendMessage`, {})
+        socket.emit("new-message", {text, receiver, sender})
+        axios.post(`http://localhost:3000/api/users/sendMessage`, {text, receiver, sender})
+            .then(() => {
+            })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
                     const {error: errorMessage} = error.response.data;
@@ -24,15 +35,24 @@ export default function sendMessage() {
         <form onSubmit={handleSubmit}>
             <div>
                 <label id="username">Inserisci qui l'username dell'utente a cui vuoi inviare il messaggio</label>
-                <input type="text" id="username" name="username" placeholder="Username..."/></div>
+                <input type="text" id="username" name="username" placeholder="Username..." value={receiver}
+                       onChange={(e) => {
+                           setReceiver(e.target.value);
+                           e.target.value=' '
+                       }}/></div>
 
             <div>
                 <label id="messaggio">Inserisci qui il messaggio che vuoi inviare</label>
-                <input type="text" id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio..."/>
+                <input type="text" id="messaggio" name="messaggio" placeholder="Inserisci qui il tuo messaggio..."
+                       value={text}
+                       onChange={(e) => {
+                           setText(e.target.value);
+                           e.target.value=' '
+                       }}/>
             </div>
 
             <div>
-                <button type="button" id="sendMessage">Ivia</button>
+                <button type="submit" id="sendMessage">Ivia</button>
             </div>
 
 
