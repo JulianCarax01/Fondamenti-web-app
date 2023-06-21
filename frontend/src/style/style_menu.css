@@ -1,0 +1,44 @@
+/* Stile per il contenitore <div> */
+div {
+    margin: 20px;
+}
+
+/* Stile per la lista <ul> */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Stile per il paragrafo "Se hai già un account effettua il login" */
+ul p:first-of-type {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Stile per il pulsante di login */
+ul .login-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #337ab7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Stile per il paragrafo "Altrimenti effettua la registrazione" */
+ul p:last-of-type {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Stile per il pulsante di registrazione */
+ul .signup-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}

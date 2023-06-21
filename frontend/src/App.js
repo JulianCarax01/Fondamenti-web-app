@@ -1,4 +1,4 @@
-import './App.css';
+import './style/App.css';
 import Login from './pages/Login';
 import Homepage from './pages/Homepage';
 import SignUp from './pages/SignUp';
@@ -15,7 +15,13 @@ function App() {
 
     return (
         <div className="App">
-            <h1> Nome dell'app </h1>
+            <div id="container">
+                <h3 className="glitch">
+                    DYBALA
+                    <span className="first">DYBALA</span>
+                    <span className="second" aria-hidden="true">DYBALA</span>
+                </h3>
+            </div>
             <Routes>
                 <Route path="/" element={<Menu/>}/>
                 <Route path="/login" element={<Login/>}/>

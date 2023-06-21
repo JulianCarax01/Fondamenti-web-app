@@ -1,6 +1,6 @@
 import React from "react"
 import Button from "./Button"
-
+import '../style/style_card.css'
 
 export default function Card({icon: Icon, name, link}) {
     return (
