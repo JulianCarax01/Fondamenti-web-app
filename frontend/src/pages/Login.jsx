@@ -51,7 +51,7 @@ export default function LogIn() {
     }
 
     return (<>
-        <h2>Login</h2>
+        <h2>Sign In</h2>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="username" id="usernameForm">Username:</label>
