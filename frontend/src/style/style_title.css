@@ -1,78 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    background: #282c34;
-    font-size: 2vmin;
-    font-family: JetBrains Mono, monospace;
-    height: 100vh;
-    width: 100vw;
+.container {
+    color: #e5e5e5;
+    font-size: 2.26rem;
+    text-transform: uppercase;
+    height: 50vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: #e4bb68;
+    justify-content: center;
 }
 
-.string {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    animation: move 4s infinite;
+.animation {
+    height:50px;
+    overflow:hidden;
+    margin-left: 1rem;
 }
 
-.greeting {
-    position: relative;
-    top: 8.6vmin;
-    animation: white-out 5s infinite;
+.animation > div > div {
+    padding: 0.25rem 0.75rem;
+    height:2.81rem;
+    margin-bottom: 2.81rem;
+    display:inline-block;
 }
 
-.closure::after {
-    content: '';
-    position: absolute;
-    height: 25vmin;
-    width: 40vmin;
-    background: #282c34;
-    transform: translate(-45vmin, -24.5vmin);
+.animation div:first-child {
+    animation: text-animation 8s infinite;
 }
 
-.closure::before {
-    content: '';
-    position: absolute;
-    height: 25vmin;
-    width: 40vmin;
-    background: #282c34;
-    transform: translate(-40vmin, 5vmin);
+.first div {
+    background-color:#20a7d8;
+}
+.second div {
+    background-color:#CD921E;
+}
+.third div {
+    background-color:#c10528;
 }
 
-.en {
-    color: #fa8231;
-}
+@keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -5.62rem;}
+    30% {margin-top: -5.62rem;}
+    40% {margin-top: -11.24rem;}
+    60% {margin-top: -11.24rem;}
+    70% {margin-top: -5.62rem;}
+    80% {margin-top: -5.62rem;}
+    90% {margin-top: 0;}
 
-.es {
-    color: white;
-}
-
-.de {
-    color: #c678dd;
-}
-
-.it {
-    color: #a9b0bd;
-}
-
-@keyframes move {
-    25% {
-        transform: translatey(-5.8vmin);
-        opacity: 1;
-    }
-    50% {
-        transform: translatey(-11vmin);
-    }
-    75% {
-        transform: translatey(-16.5vmin);
-    }
 }
