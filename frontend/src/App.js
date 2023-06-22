@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import Menu from './components/Menu';
 import SendMessage from './pages/SendMessage';
 import { Routes, Route } from 'react-router-dom';
+import ChatsPanel from "./pages/ChatsPanel";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/sendMessage" element={<SendMessage />} />
+                <Route path="/ChatsPanel" element={<ChatsPanel />} />
             </Routes>
         </div>
     );

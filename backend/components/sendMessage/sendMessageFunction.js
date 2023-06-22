@@ -36,10 +36,10 @@ const sendMessageFunction = async (req, res) => {
         }
 
 
-        res.status(200).send("ok").end()
+        res.status(200).json({status: "ok"}).end()
 
     } catch (e) {
-        console.log(e)
+        console.log(`Error: ${e}`)
         res.end()
     }
 

@@ -15,7 +15,7 @@ export default function Homepage() {
             </h2>
             <p>Scegli cosa vuoi fare 🧑‍💻</p>
             <div className="justify-content-center">
-                <Card icon={FaList} name="Visualizza le mie chat" link="/" />
+                <Card icon={FaList} name="Visualizza le mie chat" link="/ChatsPanel" />
                 <Card icon={FaUsers} name="Visualizza i miei amici" link="/" />
                 <Card icon={FaRegEdit} name="Scrivi un messaggio" link="/sendMessage" />
                 <Card icon={FaUserPlus} name="Aggiungi un amico" link="/" />

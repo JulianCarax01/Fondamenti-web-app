@@ -6,13 +6,13 @@ export default function Title(){return(
         <p>Ciao 👋 noi siamo</p>
         <section className="animation">
             <div className="first">
-                <div>Raffaele Neri</div>
+                <div>Raffaele il Negro finale</div>
             </div>
             <div className="second">
                 <div>Rossella Tritto</div>
             </div>
             <div className="third">
-                <div>Alessandro il negro</div>
+                <div>Black Mamba</div>
             </div>
         </section>
     </main>

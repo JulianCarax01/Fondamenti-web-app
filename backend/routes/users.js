@@ -5,8 +5,10 @@ const path = require('path');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const io=req.io;
-    io.on("connection",(socket)=>{console.log("utente connesso")})
+    const io = req.io;
+    io.on("connection", (socket) => {
+        console.log("utente connesso")
+    })
     res.json({message: 'root for posts api'});
 });
 //All'inserimento dei file nel form , andiamo a /login dove chiameremo loginUser
@@ -22,6 +24,8 @@ router.post('/signup', usersController.addUser);
 router.post('/sendMessage', usersController.sendMessage);
 
 router.get('/viewChat', usersController.viewChat)
+
+router.get("/showChat", usersController.showChat)
 
 
 module.exports = router;
