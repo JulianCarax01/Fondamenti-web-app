@@ -58,10 +58,10 @@ const navigate= useNavigate();
               <option value="female">Female</option>
               <option value="notsay">I prefer not to say</option>
             </select><br />
-    
+    <p></p>
             <label> Birthday: </label>
             <input  className={'birthday'} type="date" id="birthday" name="birthday" value={inputs.birthday} onChange={handleChange}/><br />
-
+<p></p>
               <button className={'buttonSignup'} type="submit" >Join</button>
 
 
