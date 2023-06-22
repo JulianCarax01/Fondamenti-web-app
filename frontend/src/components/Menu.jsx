@@ -7,7 +7,7 @@ export default function Menu() {
         <div>
             <Title/>
             <ul>
-                <p> Se hai già un account effettua il login 💌</p>
+                <p > Se hai già un account effettua il login 💌</p>
                 <Button description="Login" url="/login" />
 
                 <p> Altrimenti effettua la registrazione 🤌</p>
