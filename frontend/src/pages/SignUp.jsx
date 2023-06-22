@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../style/style_signup.css'
 
 
 export default function Signup() {
@@ -61,9 +62,11 @@ const navigate= useNavigate();
             </select><br />
     
             <label> Birthday: </label>
-            <input type="date" id="birthday" name="birthday" value={inputs.birthday} onChange={handleChange}/><br />
-            
-             <button type="submit">Join</button>
+            <input  className={'birthday'} type="date" id="birthday" name="birthday" value={inputs.birthday} onChange={handleChange}/><br />
+
+              <button className={'buttonSignup'} type="submit" >Join</button>
+
+
           </form>
         </div>
       );
