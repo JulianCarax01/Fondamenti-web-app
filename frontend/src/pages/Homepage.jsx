@@ -1,5 +1,4 @@
 import Card from '../components/Card';
-import { FaList, FaRegEdit, FaUsers, FaUserPlus, FaUserMinus } from 'react-icons/fa';
 import '../style/style_homepage.css'
 
 export default function Homepage() {
@@ -15,11 +14,11 @@ export default function Homepage() {
             </h2>
             <p>Scegli cosa vuoi fare 🧑‍💻</p>
             <div className="justify-content-center">
-                <Card icon={FaList} name="Visualizza le mie chat" link="/ChatsPanel" />
-                <Card icon={FaUsers} name="Visualizza i miei amici" link="/" />
-                <Card icon={FaRegEdit} name="Scrivi un messaggio" link="/sendMessage" />
-                <Card icon={FaUserPlus} name="Aggiungi un amico" link="/" />
-                <Card icon={FaUserMinus} name="Elimina un amico" link="/" />
+                <Card icon={"👓"} name="Visualizza le mie chat" link="/ChatsPanel" />
+                <Card icon={"👭"} name="Visualizza i miei amici" link="/" />
+                <Card icon={"📄"} name="Invia un messaggio" link="/sendmessage" />
+                <Card icon={"🙋"} name="Aggiungi un amico" link="/" />
+                <Card icon={"🙅"} name="Elimina un amico" link="/" />
             </div>
         </>
     );

@@ -5,7 +5,7 @@ import '../style/style_button.css'
 export default function Button({ description, url }) {
     return (
         <li>
-            <Link to={url} style={{ color: '#6643b5' }}>
+            <Link to={url} style={{ color: '#f2f2f2' }}>
                 {description}
             </Link>
         </li>
