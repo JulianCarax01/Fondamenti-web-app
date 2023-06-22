@@ -17,7 +17,7 @@ export default function Homepage() {
                 <Card icon={"👓"} name="Visualizza le mie chat" link="/ChatsPanel" />
                 <Card icon={"👭"} name="Visualizza i miei amici" link="/" />
                 <Card icon={"📄"} name="Invia un messaggio" link="/sendmessage" />
-                <Card icon={"🙋"} name="Aggiungi un amico" link="/" />
+                <Card icon={"🙋"} name="Aggiungi un amico" link="/friend" />
                 <Card icon={"🙅"} name="Elimina un amico" link="/" />
             </div>
         </>

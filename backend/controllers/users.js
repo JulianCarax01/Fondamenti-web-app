@@ -3,6 +3,7 @@ const signupFunction = require("../components/signup/signupFunction")
 const sendMessage = require("../components/sendMessage/sendMessageFunction")
 const viewChat = require("../components/viewChat/viewChatFunction")
 const showChat = require("../components/showChat/showChatFunction")
+const addFriend = require("../components/friend/addFriend")
 
 //Esportiamo la funzione asincrona LoginUser
 module.exports = {
@@ -10,6 +11,7 @@ module.exports = {
     addUser: signupFunction,
     sendMessage: sendMessage,
     viewChat: viewChat,
-    showChat:showChat
+    showChat:showChat,
+    addFriend:addFriend
 }
 

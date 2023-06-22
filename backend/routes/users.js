@@ -27,6 +27,8 @@ router.get('/viewChat', usersController.viewChat)
 
 router.get("/showChat", usersController.showChat)
 
+router.post('/addFriend', usersController.addFriend)
+
 
 module.exports = router;
 

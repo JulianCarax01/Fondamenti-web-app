@@ -17,11 +17,8 @@ const userSchema = new mongoose.Schema({
         type: Date, unique: false
     }, logged: {
         type: Boolean, default: false
-    }, chats: [{type: Schema.Types.ObjectId, ref: "Chat"}]
-
-
-
-    //friends:[mongoose.Schema.ObjectId],
+    }, chats: [{type: Schema.Types.ObjectId, ref: "Chat"}], 
+    friends: [{type: Schema.Types.ObjectId, ref: "User"}]
 
 });
 

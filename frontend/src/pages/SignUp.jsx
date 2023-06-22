@@ -15,17 +15,15 @@ const navigate= useNavigate();
     axios.post('http://localhost:3000/api/users/signup', inputs)
       .then((response) => {
         console.log(response.data);
-        // Esegui azioni dopo la registrazione
-        navigate('/login'); // Reindirizza l'utente alla pagina di login
+        navigate('/login');
       })
       .catch((error) => {
         if (error.response && error.response.status === 400) {
           const { message } = error.response.data;
           alert(message);
-          navigate('/signup'); // Reindirizza l'utente alla pagina di signup
+          navigate('/signup'); 
         } else {
           console.error(error);
-          // Gestisci altri errori
         }
       })
 

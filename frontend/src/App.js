@@ -6,6 +6,7 @@ import Menu from './components/Menu';
 import SendMessage from './pages/SendMessage';
 import { Routes, Route } from 'react-router-dom';
 import ChatsPanel from "./pages/ChatsPanel";
+import Friend from "./pages/Friend";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/sendMessage" element={<SendMessage />} />
                 <Route path="/ChatsPanel" element={<ChatsPanel />} />
+                <Route path="/friend" element={<Friend />} />
             </Routes>
         </div>
     );
