@@ -11,9 +11,13 @@ export default function DeleteFriend() {
     
     const handleDeleteFriend = (event) => {
         event.preventDefault()
-        console.log('handleDeleteFriend function called');
+
+        if (friendToDelete === user.username) {
+            alert("Non puoi rimuovere te stesso come amico.");
+            return;
+        }
+
         socket.emit('friend-delete', user, friendToDelete)
-        console.log('Before axios.post request');
         axios.post('http://localhost:3000/api/users/deleteFriend', {  user: me_user, friend: friendToDelete })
       .then((response) => {
         console.log(response.data)
@@ -35,7 +39,7 @@ export default function DeleteFriend() {
   };
   return(
         <div> 
-            <h2> In questa pagina puoi eliminare un amico </h2>
+            <h2> In questa pagina puoi eliminare un amico 🙅</h2>
             
             <form onSubmit={handleDeleteFriend}>
         <label> Elimina un amico </label>

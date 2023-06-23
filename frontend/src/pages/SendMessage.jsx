@@ -32,7 +32,7 @@ export default function SendMessage() {
     }
 
     return (<>
-        <h2>Invia il tuo messaggio</h2>
+        <h2>Invia il tuo messaggio 📄</h2>
         <form onSubmit={handleSubmit}>
             <div>
                 <label id="usernamelabel">Inserisci qui l'username dell'utente a cui vuoi inviare il messaggio</label>

@@ -11,6 +11,12 @@ export default function AddFriend() {
     
     const handleAddFriend = (event) => {
         event.preventDefault()
+
+        if (friendToAdd === user.username) {
+            alert("Non puoi aggiungere te stesso come amico.");
+            return;
+        }
+
         socket.emit('friend-add', user, friendToAdd);
         axios.post('http://localhost:3000/api/users/addFriend', {user: me_user, friend: friendToAdd})
       .then((response) => {
@@ -32,10 +38,10 @@ export default function AddFriend() {
   };
   return(
         <div> 
-            <h2> In questa pagina puoi aggiungere un amico </h2>
+            <h2> In questa pagina puoi aggiungere un amico 🙋</h2>
             
             <form onSubmit={handleAddFriend}>
-            <label> Aggiungi un amico </label>
+            <label> Aggiungi un amico  </label>
             <input type="text" name="friendadd" placeholder="Digita lo username dell'amico" value={friendToAdd} 
             onChange={(event) => 
               {setFriendToAdd(event.target.value); event.target.value=''} } />
