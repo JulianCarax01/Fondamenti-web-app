@@ -25,7 +25,7 @@ router.post('/sendMessage', usersController.sendMessage);
 
 router.get('/viewChat', usersController.viewChat)
 
-router.get("/showChat", usersController.showChat)
+router.get("/showChat/:loggedUserId", usersController.showChat)
 
 router.post('/addFriend', usersController.addFriend)
 
