@@ -3,7 +3,7 @@ import { useState } from "react"
 import axios from "axios"
 import {socket} from "../socket"
 
-export default function Friend() {
+export default function AddFriend() {
     const [friendToAdd, setFriendToAdd] = useState('')
 
     const user = JSON.parse(localStorage.getItem('user'));
@@ -11,7 +11,6 @@ export default function Friend() {
     
     const handleAddFriend = (event) => {
         event.preventDefault()
-        //socket.emit('friend-add', {me_user, friendToAdd});
         socket.emit('friend-add', user, friendToAdd);
         axios.post('http://localhost:3000/api/users/addFriend', {user: me_user, friend: friendToAdd})
       .then((response) => {
@@ -33,7 +32,7 @@ export default function Friend() {
   };
   return(
         <div> 
-            <h2> Questa è la pagina dedicata alla gestione degli amici </h2>
+            <h2> In questa pagina puoi aggiungere un amico </h2>
             
             <form onSubmit={handleAddFriend}>
             <label> Aggiungi un amico </label>
@@ -47,13 +46,3 @@ export default function Friend() {
     </div>
   );
 }
-
-/*
-<form onSubmit={handleDeleteFriend}>
-        <label> Elimina un amico </label>
-        <input type="text" name="frienddelete" placeholder="Digita lo username dell'amico" value={friendToDelete} onChange={(event) => setFriendToDelete(event.target.value)}
-        />
-        <button type="submit">Elimina</button>
-      </form>
-*/
-    

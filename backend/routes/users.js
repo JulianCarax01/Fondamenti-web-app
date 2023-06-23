@@ -15,10 +15,6 @@ router.get('/', (req, res) => {
 router.post('/login', usersController.loginUser);
 
 
-router.get('/signup', function (req, res) {
-    res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
-});
-
 router.post('/signup', usersController.addUser);
 
 router.post('/sendMessage', usersController.sendMessage);
@@ -28,6 +24,8 @@ router.get('/viewChat', usersController.viewChat)
 router.get("/showChat/:loggedUserId", usersController.showChat)
 
 router.post('/addFriend', usersController.addFriend)
+
+router.post('/deleteFriend', usersController.deleteFriend)
 
 
 module.exports = router;
