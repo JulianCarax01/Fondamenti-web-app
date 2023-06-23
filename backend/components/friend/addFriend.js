@@ -5,8 +5,8 @@ addFriend = async (req, res) => {
     const { user, friend } = req.body
 
     const foundUser = await User.findById(user).populate('friends');
-    console.log('lo user è ', foundUser)
-    console.log('lista amici', foundUser.friends)
+    /*Per vedere se funziona: console.log('lo user è ', foundUser)
+    console.log('lista amici', foundUser.friends)*/
   
     const friendToAdd = await User.findOne({ username: friend })
 
@@ -26,7 +26,7 @@ addFriend = async (req, res) => {
         await foundUser.save();
         res.json({ message: 'Amico aggiunto correttamente' })
       } catch (error) {
-        console.log('Errore durante l\'aggiunta dell\'amico:', error)
+        console.log('Errore: ', error)
         res.status(500).json({ message: 'Errore del server' })
       }
    };

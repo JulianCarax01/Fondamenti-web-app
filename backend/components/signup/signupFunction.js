@@ -16,7 +16,7 @@ const User = require("../../models/users");
     
       res.json({ message: 'Utente aggiunto!' });
     } catch (error) {
-      console.log('Errore durante l\'inserimento dell\'utente:', error);
+      console.log('Errore:', error);
       res.status(500).json({ message: 'Errore del server' });
     }
    };
