@@ -19,9 +19,9 @@ router.post('/signup', usersController.addUser);
 
 router.post('/sendMessage', usersController.sendMessage);
 
-router.get('/viewChat', usersController.viewChat)
-
 router.get("/showChat/:loggedUserId", usersController.showChat)
+
+router.get("/findUser/:userId", usersController.findUser)
 
 router.post('/addFriend', usersController.addFriend)
 

@@ -19,7 +19,7 @@ function App() {
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/sendMessage" element={<SendMessage />} />
-                <Route path="/ChatsPanel" element={<ChatsPanel />} />
+                <Route path="/ChatsPanel/*" element={<ChatsPanel />} />
                 <Route path="/AddFriend" element={<AddFriend />} />
                 <Route path="/DeleteFriend" element={<DeleteFriend />} />
             </Routes>
