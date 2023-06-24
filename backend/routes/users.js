@@ -27,6 +27,8 @@ router.post('/addFriend', usersController.addFriend)
 
 router.post('/deleteFriend', usersController.deleteFriend)
 
+router.post('/viewFriends', usersController.viewFriends)
+
 
 module.exports = router;
 

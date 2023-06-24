@@ -5,6 +5,7 @@ const viewChat = require("../components/viewChat/viewChatFunction")
 const showChat = require("../components/showChat/showChatFunction")
 const addFriend = require("../components/friend/addFriend")
 const deleteFriend = require("../components/friend/deleteFriend")
+const viewFriends = require("../components/friend/viewFriends")
 
 //Esportiamo la funzione asincrona LoginUser
 module.exports = {
@@ -14,6 +15,7 @@ module.exports = {
     viewChat: viewChat,
     showChat:showChat,
     addFriend:addFriend,
-    deleteFriend: deleteFriend
+    deleteFriend: deleteFriend,
+    viewFriends: viewFriends
 }
 
