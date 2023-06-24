@@ -10,4 +10,3 @@ socket.on('friend-add', (user, friendToAdd) => {
   socket.on('friend-delete', (user, friendToDelete) => {
     console.log('Amico eliminato correttamente');
   });
-export default socket

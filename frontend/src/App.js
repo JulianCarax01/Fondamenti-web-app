@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 import ChatsPanel from "./pages/ChatsPanel";
 import AddFriend from "./pages/AddFriend";
 import  DeleteFriend from "./pages/DeleteFriend";
+import ViewFriends from './pages/ViewFriends';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/ChatsPanel/*" element={<ChatsPanel />} />
                 <Route path="/AddFriend" element={<AddFriend />} />
                 <Route path="/DeleteFriend" element={<DeleteFriend />} />
+                <Route path="/viewFriends" element={<ViewFriends />} />
             </Routes>
         </div>
     );

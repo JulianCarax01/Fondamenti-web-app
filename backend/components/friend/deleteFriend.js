@@ -1,7 +1,6 @@
 const User = require("../../models/users");
 
 deleteFriend = async (req, res) => {
-    console.log('Inside deleteFriend controller');
   try {
     const { user, friend } = req.body
 
