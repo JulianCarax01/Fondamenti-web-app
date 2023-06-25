@@ -50,7 +50,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("disconnected")
     })
-    socket.on("new-message", (obj) => {
-        console.log(`${obj}`)
+    socket.on("message", () => {
+        socket.emit("message")
     })
 })

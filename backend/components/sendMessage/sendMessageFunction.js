@@ -36,7 +36,7 @@ const sendMessageFunction = async (req, res) => {
         }
 
 
-        res.status(200).json({status: "ok"}).end()
+        res.status(200).send(newMessage)
 
     } catch (e) {
         console.log(`Error: ${e}`)

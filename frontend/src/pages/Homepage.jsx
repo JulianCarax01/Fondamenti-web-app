@@ -14,9 +14,9 @@ export default function Homepage() {
             </h2>
             <p>Scegli cosa vuoi fare 🧑‍💻</p>
             <div className="justify-content-center">
-                <Card icon={"👓"} name="Visualizza le mie chat" link="/ChatsPanel" />
+                <Card icon={"👓"} name="Visualizza le mie chat" link="/ChatsPage" />
+                <Card icon={"📨"} name="Invia un messaggio" link="/SendFirstMessage" />
                 <Card icon={"👭"} name="Visualizza i miei amici" link="/viewFriends" />
-                <Card icon={"📄"} name="Invia un messaggio" link="/sendmessage" />
                 <Card icon={"🙋"} name="Aggiungi un amico" link="/addFriend" />
                 <Card icon={"🙅"} name="Elimina un amico" link="/deleteFriend" />
             </div>

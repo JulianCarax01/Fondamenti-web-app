@@ -3,12 +3,12 @@ import Login from './pages/Login';
 import Homepage from './pages/Homepage';
 import SignUp from './pages/SignUp';
 import Menu from './components/Menu';
-import SendMessage from './pages/SendMessage';
 import { Routes, Route } from 'react-router-dom';
-import ChatsPanel from "./pages/ChatsPanel";
 import AddFriend from "./pages/AddFriend";
 import  DeleteFriend from "./pages/DeleteFriend";
 import ViewFriends from './pages/ViewFriends';
+import ChatsPage from "./pages/ChatsPage";
+import SendFirstMessage from "./components/SendFirstMessage";
 
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/homepage" element={<Homepage />} />
-                <Route path="/sendMessage" element={<SendMessage />} />
-                <Route path="/ChatsPanel/*" element={<ChatsPanel />} />
+                <Route path="/ChatsPage" element={<ChatsPage />} />
+                <Route path="/SendFirstMessage" element={<SendFirstMessage />} />
                 <Route path="/AddFriend" element={<AddFriend />} />
                 <Route path="/DeleteFriend" element={<DeleteFriend />} />
                 <Route path="/viewFriends" element={<ViewFriends />} />

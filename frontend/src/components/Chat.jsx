@@ -1,35 +1,10 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
-import ChatButton from "./ChatButton";
+import TextContainer from "./TextContainer";
+import SendMessage from "./SendMessage";
 
-export default function Chat({chat, otherId}) {
-
-    const [username, setUsername] = useState(``)
-    const [url, setUrl]=useState(``)
-
-    useEffect(() => {
-        axios.get("http://localhost:3000/api/users/findUser/" + otherId)
-            .then((res) => {
-                if (res.status === 200) {
-                    return res.data
-                } else {
-                    throw new Error("Errore di comunicazione col server nell'ottenimento delle chat")
-                }
-            })
-            .then((dati) => {
-                setUsername(dati)
-                setUrl(`/ChatsPanel/ChatRoom/${chat._id}`)
-            })
-            .catch((e) => {
-                console.log(e)
-            })
-
-
-    }, [])
-
-
+export default function Chat({rightChat, otherUser, loggedUser}) {
     return (<>
-        <ChatButton description={username} url={url}  ></ChatButton>
+        <h1>{otherUser}</h1>
+        <TextContainer rightChat={rightChat} loggedUser={loggedUser}></TextContainer>
+        <SendMessage receiver={otherUser} sender={loggedUser} rightChat={rightChat}></SendMessage>
     </>)
-
 }
