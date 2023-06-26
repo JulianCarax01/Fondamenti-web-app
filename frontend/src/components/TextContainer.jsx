@@ -17,9 +17,12 @@ export default function TextContainer({rightChat, loggedUser, message}) {
                                   loggedUser={loggedUser}></Message>
             let p = document.createElement("p")
             let color;
-            loggedUser._id === message.sender[0] ? color = `green` : color = `red`
+            loggedUser._id === message.sender[0] ? color = `green` : color = `white`
             p.innerHTML = message.text;
             p.style.color = color;
+            p.style.background = "#f96d00";
+            p.style.marginLeft = "auto";
+            p.style.width = "fit-content";
             ref.current.append(p)
             scroll()
         })
