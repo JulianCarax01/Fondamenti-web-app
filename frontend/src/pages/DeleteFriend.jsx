@@ -47,7 +47,9 @@ export default function DeleteFriend() {
         onChange={(event) => {setFriendToDelete(event.target.value);  event.target.value=''}}   />
         <button type="submit">Elimina</button>
       </form>
+      <p> Per ritornare alla <a href="http://localhost:3001/homepage"> Homepage </a> </p> 
  </div>
+ 
   );
 }
 

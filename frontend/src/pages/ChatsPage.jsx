@@ -53,6 +53,8 @@ export default function ChatsPage() {
         <div className="main-content">
             {showChatRoom && (<Chat rightChat={rightChat} otherUser={otherUser} loggedUser={loggedUser}></Chat>)}
         </div>
+        <p> Per visualizzare solo le chat con i tuoi amici <a href="http://localhost:3001/chatsFriends"> Filtra per amici </a> </p> 
+        <p> Per ritornare alla <a href="http://localhost:3001/homepage"> Homepage </a> </p> 
 
     </>)
 

@@ -47,6 +47,7 @@ export default function AddFriend() {
               {setFriendToAdd(event.target.value); event.target.value=''} } />
             <button type="submit">Aggiungi</button>
             </form>
+            <p> Per ritornare alla <a href="http://localhost:3001/homepage"> Homepage </a> </p> 
 
             
     </div>
