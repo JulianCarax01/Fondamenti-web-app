@@ -12,11 +12,10 @@ export default function SendMessage({receiver, sender, rightChat}) {
 
 
     const handleSubmit = (e) => {
-        const Text=text
-        setText(``)
         e.preventDefault();
-        axios.post(`http://localhost:3000/api/users/sendMessage`, {Text, receiver, sender})
+        axios.post(`http://localhost:3000/api/users/sendMessage`, {text, receiver, sender})
             .then(() => {
+                setText(``)
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
