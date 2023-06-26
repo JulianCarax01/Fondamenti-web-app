@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 import ChatButton from "../components/ChatButton";
 import Chat from "../components/Chat";
-
+import '../style/style_chatspage.css'
 export default function ChatsPage() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
@@ -35,7 +35,7 @@ export default function ChatsPage() {
     return (<>
         <div>
             {loading ? <p>Caricamento in corso...</p> : error ? <p>Errore!!!Impossibile visualizzare le chat</p> : (
-                <div className="sidebar">
+                <div className="sidebarchat">
                     {chats.map((chat) => {
                         let user;
                         {
@@ -53,8 +53,9 @@ export default function ChatsPage() {
         <div className="main-content">
             {showChatRoom && (<Chat rightChat={rightChat} otherUser={otherUser} loggedUser={loggedUser}></Chat>)}
         </div>
-        <p> Per visualizzare solo le chat con i tuoi amici <a href="http://localhost:3001/chatsFriends"> Filtra per amici </a> </p> 
-        <p> Per ritornare alla <a href="http://localhost:3001/homepage"> Homepage </a> </p> 
+        <p> Per visualizzare solo le chat con i tuoi amici <a href="http://localhost:3001/chatsFriends" style={{ color: "#f96d00" }}> Filtra per amici </a> </p>
+        <p> Per ritornare alla <a href="http://localhost:3001/homepage" style={{ color: "#6643b5" }}> Homepage </a> </p>
+
 
     </>)
 

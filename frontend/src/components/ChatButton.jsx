@@ -33,7 +33,7 @@ export default function ChatButton({user, showChatRoom, setShowChatRoom, chat, s
     }, [])
     return (
         <>
-        <button onClick={clickHandler} onDoubleClick={doubleClickHandler}>{name}</button>
+        <button className={"chatName"} onClick={clickHandler} onDoubleClick={doubleClickHandler}>{name}</button>
         </>
     );
 }

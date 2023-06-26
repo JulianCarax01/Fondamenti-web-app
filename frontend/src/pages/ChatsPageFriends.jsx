@@ -88,7 +88,8 @@ export default function ChatsPageFriends() {
           {selectedFriend && showChatRoom && (
     <Chat rightChat={rightChat}  otherUser={otherUser} loggedUser={loggedUser}/> )}</>
       )}
-      <p> Per ritornare alla <a href="http://localhost:3001/homepage">Homepage</a> </p>
+      <p> Per ritornare alla <a href="http://localhost:3001/homepage" style={{ color: "#6643b5" }}> Homepage </a> </p>
+
     </div>
   );
 }

@@ -44,9 +44,8 @@ export default function ViewFriends() {
           ))}
         </ul>
       )}
-      <p>
-        Per ritornare alla <a href="http://localhost:3001/homepage">Homepage</a>
-      </p>
+        <p> Per ritornare alla <a href="http://localhost:3001/homepage" style={{ color: "#6643b5" }}> Homepage </a> </p>
+
     </div>
   );
 }
