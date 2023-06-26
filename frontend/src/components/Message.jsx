@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 
 export default function Message({message, loggedUser}) {
-
     const [color, setColor]=useState(``)
 
     useEffect(() => {
@@ -10,9 +9,10 @@ export default function Message({message, loggedUser}) {
 
 
     return (
-        <>
-            <p style={{color:color}}>{message.text}</p>
-        </>
+
+        <p style={{color:color}}>{message.text}</p>
+
 
     )
 }
+
