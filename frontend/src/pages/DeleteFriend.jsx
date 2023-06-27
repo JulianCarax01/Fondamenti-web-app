@@ -1,13 +1,13 @@
 import React from "react"
 import { useState } from "react"
 import axios from "axios"
-import { socket } from "../socket"
+
 
 export default function DeleteFriend() {
     const [friendToDelete, setFriendToDelete] = useState('')
 
-    const user = JSON.parse(localStorage.getItem('user'));
-    const me_user = user._id;
+    const user = JSON.parse(localStorage.getItem('user'))
+    const me_user = user._id //ottengo l'id dell'utente attualmente loggato 
     
     const handleDeleteFriend = (event) => {
         event.preventDefault()
@@ -17,23 +17,21 @@ export default function DeleteFriend() {
             return;
         }
 
-        socket.emit('friend-delete', user, friendToDelete)
+        
         axios.post('http://localhost:3000/api/users/deleteFriend', {  user: me_user, friend: friendToDelete })
       .then((response) => {
         console.log(response.data)
         alert("L'amico è stato eliminato!")
-        setFriendToDelete('')
-        
-      })
-      .catch((error) => {
+        setFriendToDelete('') }) ////effettuo la richiesta post per l'eliminazione di un amico passando come corpo della richiesta l'amico da eliminare e l'id dell'utente attualmente loggato 
+      .catch((error) => { //gestisco i diversi errori
         if (error.response && error.response.status === 401) {
-          alert("Utente non trovato");
+          alert("Utente non trovato")
         } 
         else if (error.response && error.response.status === 400) {
-          alert("L'utente non è presente nella lista degli amici");
+          alert("L'utente non è presente nella lista degli amici")
         } 
         else {
-          console.error(error);
+          console.error(error)
         }
       })
   };
