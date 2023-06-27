@@ -1,7 +1,7 @@
 const {mongoose, Schema} = require('mongoose')
 const Chat = require('./chat')
 
-//Creiamo lo schema di mongoose
+//Creo lo schema di mongoose relativo all'utente
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String, required: true

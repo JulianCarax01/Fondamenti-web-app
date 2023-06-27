@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
     })
     res.json({message: 'root for posts api'});
 });
-//All'inserimento dei file nel form , andiamo a /login dove chiameremo loginUser
-router.post('/login', usersController.loginUser);
 
+//Associo ai diversi percorsi la funzione relativa del controller
+router.post('/login', usersController.loginUser);
 
 router.post('/signup', usersController.addUser);
 
@@ -27,7 +27,7 @@ router.post('/addFriend', usersController.addFriend)
 
 router.post('/deleteFriend', usersController.deleteFriend)
 
-router.post('/viewFriends', usersController.viewFriends)
+router.get('/viewFriends/:loggedUserId', usersController.viewFriends)
 
 
 module.exports = router;

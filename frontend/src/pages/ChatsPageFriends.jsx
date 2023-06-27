@@ -16,27 +16,21 @@ export default function ChatsPageFriends() {
   const loggedUser = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'))
-    const me_user = user._id
-
-    //con questa prima axios otteniamo la lista degli amici 
-
-    axios.post("http://localhost:3000/api/users/viewFriends", { userId: me_user })
+      //con questa prima axios otteniamo la lista degli amici 
+      axios.get("http://localhost:3000/api/users/viewFriends/" + `${loggedUser._id}`)
       .then(res => {
         if (res.data && res.data.friends) {
           setFriendList(res.data.friends)
-        }
-      })
+        } })
       .catch((error) => {
         if (error.response && error.response.status === 401) {
           alert("Utente non trovato")
         } else {
           console.error(error)
-        }
-      });
+        } })
   }, []);
 
-  //con questa otteniamo le chat 
+  //con questa otteniamo le chat dell'utente attualmente loggato 
 
   useEffect(() => {
     axios.get(`http://localhost:3000/api/users/showChat/` + `${loggedUser._id}`)
@@ -58,7 +52,7 @@ export default function ChatsPageFriends() {
       });
   }, []);
 
-  //quando selezioniamo un amico otteniamo la sua chat corrispondente
+  //quando selezioniamo un amico otteniamo la sua chat corrispondente tramite il setRightChat e la visualizzo
 
   const handleFriendSelection = (friend) => {
     setSelectedFriend(friend)
@@ -70,7 +64,7 @@ export default function ChatsPageFriends() {
 
   return (
     <div>
-      <h2>In questa pagina puoi visualizzare i tuoi amici</h2>
+      <h2>In questa pagina puoi visualizzare le chat con i tuoi amici</h2>
       {friendList?.length === 0 ? (
         <>
           <p>Non sono presenti amici nella lista</p>

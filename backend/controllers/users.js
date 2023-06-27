@@ -7,7 +7,7 @@ const deleteFriend = require("../components/friend/deleteFriend")
 const findUser = require("../components/findUser/findUser")
 const viewFriends = require("../components/friend/viewFriends")
 
-//Esportiamo la funzione asincrona LoginUser
+//Esporto tutte le funzioni 
 module.exports = {
     loginUser: loginFunction,
     addUser: signupFunction,
