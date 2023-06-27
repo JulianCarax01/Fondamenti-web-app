@@ -56,6 +56,7 @@ export default function SendFirstMessage() {
                        }}/>
             </div>
 
+
             <div>
                 <button type="submit" id="sendMessage">Invia</button>
             </div>

@@ -1,7 +1,7 @@
 const User = require("../../models/users");
 
 
-
+//Creo una funzione asincrona che vada a gestire la logica di login filtrando l'utente con username e password
 loginUser = async (req, res) => {
     try {
         const {username, password} = req.body
@@ -13,7 +13,7 @@ loginUser = async (req, res) => {
         req.session.userId = user._id;
         req.session.password = user.password;
         user.logged = true
-        //await user.save()
+
 
         res.status(200).json({
             user: user

@@ -17,6 +17,7 @@ export default function Message({ message, loggedUser }) {
     };
 
     return (
+        //definiamo la struttura del messaggio
         <p className={`${messageClass}`} style={{ color: color }}>
             {message.text}
         </p>

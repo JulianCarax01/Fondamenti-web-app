@@ -5,6 +5,7 @@ import {socket} from "../socket";
 import '../style/style_chat.css'
 
 export default function Chat({rightChat, otherUser, loggedUser}) {
+    //creiamo l'interfaccia generale della chat
     return (<div className={"boxchat"}>
         <h1>{otherUser}</h1>
         <TextContainer rightChat={rightChat} loggedUser={loggedUser}></TextContainer>
