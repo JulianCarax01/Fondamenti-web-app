@@ -1,7 +1,7 @@
 import Message from "./Message";
 import {useEffect, useRef} from "react";
 import {socket} from "../socket";
-
+import '../style/style_textcontainer.css'
 export default function TextContainer({rightChat, loggedUser}) {
     const ref = useRef(null)
 
@@ -29,7 +29,7 @@ export default function TextContainer({rightChat, loggedUser}) {
         scroll()
     }, []);
 
-    return (<div ref={ref}>
+    return (<div className={'chatdiv'} ref={ref}>
             {rightChat.messages.map((message) => {
                 return <Message key={message._id}
                                 message={message}
