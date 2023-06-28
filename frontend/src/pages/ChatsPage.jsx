@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import axios from "axios";
 import ChatButton from "../components/ChatButton";
 import Chat from "../components/Chat";
@@ -11,6 +11,7 @@ export default function ChatsPage() {
     const [rightChat, setRightChat] = useState(Object)
     const [otherUser, setOtherUser]=useState(``)
     const loggedUser = JSON.parse(localStorage.getItem("user"))
+
 
 
 
@@ -46,13 +47,12 @@ export default function ChatsPage() {
                                            setShowChatRoom={setShowChatRoom} chat={chat}
                                            setRightChat={setRightChat}
                                            setOtherUser={setOtherUser}
-
                         ></ChatButton>
                     })}
                 </div>)}
         </div>
         <div className="main-content" >
-            {showChatRoom && (<Chat rightChat={rightChat} otherUser={otherUser} loggedUser={loggedUser}></Chat>)}
+            {showChatRoom && (<Chat rightChat={rightChat} otherUser={otherUser} loggedUser={loggedUser} showChatRoom={showChatRoom}></Chat>)}
         </div>
         <p> Per visualizzare solo le chat con i tuoi amici <a href="http://localhost:3001/chatsFriends" style={{ color: "#f96d00" }}> Filtra per amici </a> </p>
         <p> Per ritornare alla <a href="http://localhost:3001/homepage" style={{ color: "#6643b5" }}> Homepage </a> </p>

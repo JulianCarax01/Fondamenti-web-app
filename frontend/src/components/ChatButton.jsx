@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import '../style/style_chatbutton.css'
-export default function ChatButton({user, showChatRoom, setShowChatRoom, chat, setRightChat, setOtherUser}) {
+export default function ChatButton({user, showChatRoom, setShowChatRoom, chat, setRightChat, setOtherUser, scroll}) {
     const [name, setName]=useState(``)
     let clickHandler=()=>{
         setShowChatRoom(true)

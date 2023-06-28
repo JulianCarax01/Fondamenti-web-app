@@ -9,13 +9,13 @@ export default function SendMessage({receiver, sender, rightChat}) {
     const [text, setText] = useState('')
 
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:3000/api/users/sendMessage`, {text, receiver, sender})
-            .then(() => {
-                setText(``)
+        axios.post(`http://localhost:3000/api/users/sendMessage`, {text, receiver, sender}, setText(``))
+            .then((res) => {
+                console.log(text)
+                rightChat.messages.push(res.data)
+                //setText(``)
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
@@ -29,7 +29,6 @@ export default function SendMessage({receiver, sender, rightChat}) {
         socket.emit("newMessage", {text, receiver, sender})
 
 
-
     }
 
     return (<>
@@ -39,8 +38,6 @@ export default function SendMessage({receiver, sender, rightChat}) {
                        value={text}
                        onChange={(e) => {
                            setText(e.target.value);
-                          // e.target.value = ' ';
-
                        }}
                 />
                 <button type="submit" id="sendMessage">{"📨"}</button>

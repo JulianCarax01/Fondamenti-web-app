@@ -47,9 +47,9 @@ db.once("open", () => {
 io.on("connection", (socket) => {
     console.log("utente connesso")
 
-    socket.on("newMessage", (messaggio) => {
-        socket.emit("message",messaggio)
-        socket.broadcast.emit("message",messaggio)
+    socket.on("newMessage", ({text,receiver,sender} )=> {
+        socket.emit("message",{text,receiver,sender} )
+        socket.broadcast.emit("message",{text,receiver,sender} )
 
     })
 
