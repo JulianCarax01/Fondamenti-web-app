@@ -56,9 +56,11 @@ export default function SendFirstMessage() {
                        }}/>
             </div>
 
+
             <div>
                 <button type="submit" id="sendMessage">Invia</button>
             </div>
+            <p> Per ritornare alla <a href="http://localhost:3001/homepage" style={{ color: "#6643b5" }}> Homepage </a> </p>
 
 
         </form>

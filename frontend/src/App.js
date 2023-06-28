@@ -9,6 +9,7 @@ import  DeleteFriend from "./pages/DeleteFriend";
 import ViewFriends from './pages/ViewFriends';
 import ChatsPage from "./pages/ChatsPage";
 import SendFirstMessage from "./components/SendFirstMessage";
+import ChatsPageFriends from './pages/ChatsPageFriends';
 
 
 function App() {
@@ -24,9 +25,10 @@ function App() {
                 <Route path="/AddFriend" element={<AddFriend />} />
                 <Route path="/DeleteFriend" element={<DeleteFriend />} />
                 <Route path="/viewFriends" element={<ViewFriends />} />
+                <Route path="/chatsFriends" element={<ChatsPageFriends/> } />
             </Routes>
         </div>
-    );
+          );
 }
 
 export default App;
