@@ -1,10 +1,10 @@
 import Message from "./Message";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef} from "react";
 import {socket} from "../socket";
 
-export default function TextContainer({rightChat, loggedUser, message}) {
-
+export default function TextContainer({rightChat, loggedUser}) {
     const ref = useRef(null)
+
     const scroll = () => {
         const lastChild = ref.current?.lastElementChild;
         lastChild?.scrollIntoView()

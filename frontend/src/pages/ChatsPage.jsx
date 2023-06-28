@@ -13,6 +13,7 @@ export default function ChatsPage() {
     const loggedUser = JSON.parse(localStorage.getItem("user"))
 
 
+
     useEffect(() => {
         axios.get(`http://localhost:3000/api/users/showChat/` + `${loggedUser._id}`)
             .then((res) => {
@@ -50,7 +51,7 @@ export default function ChatsPage() {
                     })}
                 </div>)}
         </div>
-        <div className="main-content">
+        <div className="main-content" >
             {showChatRoom && (<Chat rightChat={rightChat} otherUser={otherUser} loggedUser={loggedUser}></Chat>)}
         </div>
         <p> Per visualizzare solo le chat con i tuoi amici <a href="http://localhost:3001/chatsFriends" style={{ color: "#f96d00" }}> Filtra per amici </a> </p>

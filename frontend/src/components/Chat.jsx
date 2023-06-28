@@ -1,7 +1,5 @@
 import TextContainer from "./TextContainer";
 import SendMessage from "./SendMessage";
-import {useEffect, useState} from "react";
-import {socket} from "../socket";
 import '../style/style_chat.css'
 
 export default function Chat({rightChat, otherUser, loggedUser}) {
