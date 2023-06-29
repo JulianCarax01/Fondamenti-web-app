@@ -25,6 +25,15 @@ export default function TextContainer({rightChat, loggedUser}) {
             p.className = clas;
             p.innerHTML = text;
             ref.current.append(p)
+
+            /*const NewMex=<Message key={message._id}
+                                  message={message}
+                                  loggedUser={loggedUser}></Message>
+
+                                  chiedere ad Anas
+
+                                  */
+
             scroll()
         })
     },[]);
